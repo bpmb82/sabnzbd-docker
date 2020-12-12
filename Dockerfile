@@ -41,7 +41,7 @@ RUN \
  apt-get purge --auto-remove -y \
 	libffi-dev \
 	libssl-dev \
-  git \
+        git \
 	python3-pip && \
  apt-get clean && \
  rm -rf \
