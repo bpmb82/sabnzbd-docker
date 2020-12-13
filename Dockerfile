@@ -16,19 +16,31 @@ RUN \
 	libffi-dev \
 	libssl-dev \
 	p7zip-full \
-	par2-tbb \
+	automake \
+	make \
 	python3 \
 	python3-cryptography \
 	python3-distutils \
 	python3-pip \
         git \
 	unrar && \
+ echo "**** installing par2-tbb ****" && \
+ git clone https://github.com/ifsnop/par2cmdline-tbb.git &&\
+ cd par2cmdline-tbb && \
+ aclocal && \
+ automake --add-missing && \
+ autoconf && \
+ ./configure && \
+ make && \
+ make install && \
+ cd / && \
+ rm -rf par2cmdline-tbb && \
  echo "**** installing sabnzbd ****" && \
  cd /opt && \
  git clone https://github.com/sabnzbd/sabnzbd.git && \
  cd sabnzbd && \
  git checkout master && \
-  pip3 install -U pip && \
+ pip3 install -U pip && \
  pip install -U --no-cache-dir \
 	apprise \
 	pynzb \
@@ -42,6 +54,8 @@ RUN \
 	libffi-dev \
 	libssl-dev \
         git \
+	make \
+	automake \
 	python3-pip && \
  apt-get clean && \
  rm -rf \
