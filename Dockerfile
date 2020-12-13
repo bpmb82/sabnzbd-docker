@@ -10,6 +10,7 @@ RUN \
  apt-get update && \
  apt-get install -y apt-transport-https gnupg2 curl && \
  echo "**** install packages ****" && \
+ echo "deb http://ftp.nl.debian.org/debian buster main non-free" >> /etc/apt/sources.list.d/sabnzbd.list && \
  apt-get update && \
  apt-get install -y \
 	libffi-dev \
