@@ -20,7 +20,6 @@ RUN \
 	python3-cryptography \
 	python3-distutils \
 	python3-pip \
-	xml-twig-tools \
         git \
 	unrar && \
  echo "**** installing sabnzbd ****" && \
