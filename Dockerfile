@@ -24,9 +24,9 @@ RUN \
 	python3-pip \
         git \
 	unrar && \
- echo "**** installing par2-tbb ****" && \
- git clone https://github.com/ifsnop/par2cmdline-tbb.git &&\
- cd par2cmdline-tbb && \
+ echo "**** installing par2cmdline ****" && \
+ git clone https://github.com/Parchive/par2cmdline.git && \
+ cd par2cmdline && \
  aclocal && \
  automake --add-missing && \
  autoconf && \
@@ -34,7 +34,7 @@ RUN \
  make && \
  make install && \
  cd / && \
- rm -rf par2cmdline-tbb && \
+ rm -rf par2cmdline && \
  echo "**** installing sabnzbd ****" && \
  cd /opt && \
  git clone https://github.com/sabnzbd/sabnzbd.git && \
