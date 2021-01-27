@@ -71,7 +71,7 @@ RUN chmod +x *.sh
 EXPOSE 8080
 VOLUME /config
 
-HEALTHCHECK --interval=5m --timeout=5s \
+HEALTHCHECK --interval=90s --timeout=10s \
   CMD /opt/sabnzbd/healthcheck.sh
 
 ENTRYPOINT ["/opt/sabnzbd/start.sh"]
